@@ -1,13 +1,16 @@
-name: Job summaries
+name: Parallel jobs
 on: push
 jobs:
-  log:
+  first:
     runs-on: ubuntu-latest
     steps:
-      - run: | #マークダウンテキストをジョブサマリーに出力
-          echo "## Example Title :rocket:" >> "${GITHUB_STEP_SUMMARY}"
-          echo "- first line" >> "${GITHUB_STEP_SUMMARY}"
-          echo "- second line" >> "${GITHUB_STEP_SUMMARY}" 
-
-  
+      - run: sleep 10 && echo "First Job"
+  second:
+    runs-on: ubuntu-latest
+    steps:
+      - run: sleep 10 && echo "Second Job"
+  third:
+    runs-on: ubuntu-latest
+    steps:
+      - run: sleep 10 && echo "Third Job"
     
