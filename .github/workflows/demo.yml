@@ -1,4 +1,4 @@
-name: Add mask
+name: Annotation
 on: push
 jobs:
   log:
@@ -6,8 +6,9 @@ jobs:
     env:
       PASSWORD: SuperSecretValue
     steps:
-      - run: echo "::add-mask::${PASSWORD}" 
-      - run: echo "${PASSWORD}"
+      - run: echo "::error::This is an error"
+      - run: echo "::warning::This is a warning"
+      - run: echo "::notice::This is a notice" 
 
   
     
